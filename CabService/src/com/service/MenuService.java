@@ -24,6 +24,7 @@ public class MenuService {
         RouteService routeService;
         PersonService personService;
         CabBookingService cabBookingService;
+        BookingService bookingService;
         switch (code) {
             case "AV", "av":
                 FunctionUtils.displayMessage(DataHolder.CommonConstant.DISPLAY_VEHICLE_INFO);
@@ -61,6 +62,10 @@ public class MenuService {
             case "CL","cl":
                 personService = new CustomerService();
                 personService.getPerson(Customer.class.getSimpleName());
+                break;
+            case "BL","bl":
+                bookingService = new BookingService();
+                bookingService.getCustomerBookings();
                 break;
             case "CB","cb":
                 cabBookingService= new CabBookingService();
